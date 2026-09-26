@@ -1,0 +1,162 @@
+{
+  "desk_open": {
+    "id": "desk_open",
+    "speaker": "DESK MANAGER",
+    "line": "Have a seat. I already ran the numbers so we don't waste your Saturday. Five down, four eighty-nine a month. You can be in it today.",
+    "choices": [
+      { "id": "askOtd", "label": "What's the out-the-door price? One number.", "action": "askOtd", "next": "desk_otd" },
+      { "id": "separate", "label": "Price, trade, and financing. Separate them.", "action": "separate", "next": "desk_sep" },
+      { "id": "inspect", "label": "Did price, rate, or months change?", "action": "inspect", "next": "desk_inspect" },
+      { "id": "paymentTarget", "label": "I need the payment under $400.", "action": "paymentTarget", "next": "desk_target" },
+      { "id": "buyIfWorks", "label": "I'll buy it today if the numbers work.", "action": "buyIfWorks", "next": "desk_commit" },
+      { "id": "cardMarket", "label": "Play card: market price $28,400", "action": "cardMarket", "next": "desk_market" },
+      { "id": "cardTrade", "label": "Play card: outside trade $9,800", "action": "cardTrade", "next": "desk_trade" },
+      { "id": "cardBank", "label": "Play card: preapproval 6.9% / 60", "action": "cardBank", "next": "desk_bank" },
+      { "id": "walk", "label": "Walk away.", "action": "walk", "next": "end" }
+    ]
+  },
+  "desk_otd": {
+    "id": "desk_otd",
+    "speaker": "DESK MANAGER",
+    "line": "Out the door depends. Taxes, doc, your trade, how we structure the backend. That's why we work the payment. Everybody does.",
+    "choices": [
+      { "id": "separate", "label": "Then separate price / trade / money.", "action": "separate", "next": "desk_sep" },
+      { "id": "inspect", "label": "Show term, rate, add-ons on that $489.", "action": "inspect", "next": "desk_inspect" },
+      { "id": "freeze", "label": "Freeze one OTD. Write it.", "action": "freeze", "next": "desk_freeze" },
+      { "id": "walk", "label": "Walk away.", "action": "walk", "next": "end" }
+    ]
+  },
+  "desk_sep": {
+    "id": "desk_sep",
+    "speaker": "DESK MANAGER",
+    "line": "Fine. Selling price on top. Trade under it. We can talk money after you fall in love. Don't get cute with the boxes.",
+    "choices": [
+      { "id": "askOtd", "label": "Still want one out-the-door number.", "action": "askOtd", "next": "desk_otd" },
+      { "id": "cardMarket", "label": "Play card: market price $28,400", "action": "cardMarket", "next": "desk_market" },
+      { "id": "cardTrade", "label": "Play card: outside trade $9,800", "action": "cardTrade", "next": "desk_trade" },
+      { "id": "inspect", "label": "Did price, rate, or months change?", "action": "inspect", "next": "desk_inspect" },
+      { "id": "freeze", "label": "Freeze one OTD. Write it.", "action": "freeze", "next": "desk_freeze" },
+      { "id": "walk", "label": "Walk away.", "action": "walk", "next": "end" }
+    ]
+  },
+  "desk_inspect": {
+    "id": "desk_inspect",
+    "speaker": "DESK MANAGER",
+    "line": "You're looking at the wrong box. Payment is what you live with.",
+    "choices": [
+      { "id": "askOtd", "label": "One out-the-door price.", "action": "askOtd", "next": "desk_otd" },
+      { "id": "separate", "label": "Separate the squares.", "action": "separate", "next": "desk_sep" },
+      { "id": "cardBank", "label": "Play card: preapproval 6.9% / 60", "action": "cardBank", "next": "desk_bank" },
+      { "id": "paymentTarget", "label": "Just get me under $400.", "action": "paymentTarget", "next": "desk_target" },
+      { "id": "freeze", "label": "Freeze one OTD. Write it.", "action": "freeze", "next": "desk_freeze" },
+      { "id": "walk", "label": "Walk away.", "action": "walk", "next": "end" }
+    ]
+  },
+  "desk_target": {
+    "id": "desk_target",
+    "speaker": "DESK MANAGER",
+    "line": "See? I take care of people. Three ninety-nine. Sign here and we do paperwork.",
+    "choices": [
+      { "id": "inspect", "label": "What changed \u2014 price, rate, or months?", "action": "inspect", "next": "desk_inspect" },
+      { "id": "signBad", "label": "That payment works. Let's sign.", "action": "signBad", "next": "fi_menu" },
+      { "id": "askOtd", "label": "No. Out-the-door number.", "action": "askOtd", "next": "desk_otd" },
+      { "id": "walk", "label": "Walk away.", "action": "walk", "next": "end" }
+    ]
+  },
+  "desk_commit": {
+    "id": "desk_commit",
+    "speaker": "DESK MANAGER",
+    "line": "That's what I like to hear. You're a buyer. Four fifty-nine and we stop playing games.",
+    "choices": [
+      { "id": "inspect", "label": "Did price, rate, or months change?", "action": "inspect", "next": "desk_inspect" },
+      { "id": "signBad", "label": "Good enough. Send me to finance.", "action": "signBad", "next": "fi_menu" },
+      { "id": "separate", "label": "I misspoke. Separate the squares.", "action": "separate", "next": "desk_sep" },
+      { "id": "walk", "label": "Walk away.", "action": "walk", "next": "end" }
+    ]
+  },
+  "desk_market": {
+    "id": "desk_market",
+    "speaker": "DESK MANAGER",
+    "line": "Internet number. That's not this car, this color, this week. But I'll pencil twenty-eight four if you stop shopping the trade.",
+    "choices": [
+      { "id": "cardTrade", "label": "Play card: outside trade $9,800", "action": "cardTrade", "next": "desk_both" },
+      { "id": "cardBank", "label": "Play card: preapproval 6.9% / 60", "action": "cardBank", "next": "desk_bank" },
+      { "id": "askOtd", "label": "Write the OTD on twenty-eight four.", "action": "askOtd", "next": "desk_otd" },
+      { "id": "separate", "label": "Keep price and trade apart.", "action": "separate", "next": "desk_sep" },
+      { "id": "freeze", "label": "Freeze one OTD. Write it.", "action": "freeze", "next": "desk_freeze" },
+      { "id": "walk", "label": "Walk away.", "action": "walk", "next": "end" }
+    ]
+  },
+  "desk_trade": {
+    "id": "desk_trade",
+    "speaker": "DESK MANAGER",
+    "line": "CarMax isn't sitting on my lot. I'll meet ninety-eight if the selling price stays honest \u2014 honest meaning my sticker.",
+    "choices": [
+      { "id": "cardMarket", "label": "Play card: market price $28,400", "action": "cardMarket", "next": "desk_both" },
+      { "id": "inspect", "label": "Did price, rate, or months change?", "action": "inspect", "next": "desk_inspect" },
+      { "id": "freeze", "label": "Freeze one OTD. Write it.", "action": "freeze", "next": "desk_freeze" },
+      { "id": "walk", "label": "Walk away.", "action": "walk", "next": "end" }
+    ]
+  },
+  "desk_bank": {
+    "id": "desk_bank",
+    "speaker": "DESK MANAGER",
+    "line": "You can use your bank. Most people like our payment better. Funny how that works.",
+    "choices": [
+      { "id": "cardMarket", "label": "Play card: market price $28,400", "action": "cardMarket", "next": "desk_market" },
+      { "id": "cardTrade", "label": "Play card: outside trade $9,800", "action": "cardTrade", "next": "desk_trade" },
+      { "id": "inspect", "label": "Show me the term and rate you used.", "action": "inspect", "next": "desk_inspect" },
+      { "id": "freeze", "label": "Freeze one OTD. Write it.", "action": "freeze", "next": "desk_freeze" },
+      { "id": "walk", "label": "Walk away.", "action": "walk", "next": "end" }
+    ]
+  },
+  "desk_both": {
+    "id": "desk_both",
+    "speaker": "DESK MANAGER",
+    "line": "Alright. You're that guy. Price and trade pinned. Don't ask me to make the payment pretty.",
+    "choices": [
+      { "id": "askOtd", "label": "One out-the-door number.", "action": "askOtd", "next": "desk_otd" },
+      { "id": "cardBank", "label": "Play card: preapproval 6.9% / 60", "action": "cardBank", "next": "desk_bank" },
+      { "id": "separate", "label": "Confirm the squares stay separate.", "action": "separate", "next": "desk_sep" },
+      { "id": "freeze", "label": "Freeze one OTD. Write it.", "action": "freeze", "next": "desk_freeze" },
+      { "id": "walk", "label": "Walk away.", "action": "walk", "next": "end" }
+    ]
+  },
+  "desk_freeze": {
+    "id": "desk_freeze",
+    "speaker": "DESK MANAGER",
+    "line": "There. One number. No more boxes dancing. Finance still has to bless it.",
+    "choices": [
+      { "id": "toFi", "label": "Go to F&I with the frozen number.", "action": "toFi", "next": "fi_menu" },
+      { "id": "walk", "label": "Walk away with the number on paper.", "action": "walk", "next": "end" }
+    ]
+  },
+  "desk_freeze_fail": {
+    "id": "desk_freeze_fail",
+    "speaker": "DESK MANAGER",
+    "line": "I can't freeze air. Give me an out-the-door ask and keep price off the trade.",
+    "choices": [
+      { "id": "askOtd", "label": "What's the out-the-door price?", "action": "askOtd", "next": "desk_otd" },
+      { "id": "separate", "label": "Separate price / trade / financing.", "action": "separate", "next": "desk_sep" },
+      { "id": "walk", "label": "Walk away.", "action": "walk", "next": "end" }
+    ]
+  },
+  "fi_menu": {
+    "id": "fi_menu",
+    "speaker": "F&I MANAGER",
+    "line": "Congratulations. Before you sign: nitrogen, etch, and a service contract. Twenty-two hundred, pennies a day on the payment.",
+    "choices": [
+      { "id": "declineFi", "label": "No add-ons. Same OTD.", "action": "declineFi", "next": "fi_no" },
+      { "id": "acceptFi", "label": "Fine. Pack it in.", "action": "acceptFi", "next": "end" }
+    ]
+  },
+  "fi_no": {
+    "id": "fi_no",
+    "speaker": "F&I MANAGER",
+    "line": "Your funeral. Sign the clean contract or take a walk.",
+    "choices": [
+      { "id": "signGood", "label": "Sign the locked number.", "action": "signGood", "next": "end" },
+      { "id": "walk", "label": "Walk away.", "action": "walk", "next": "end" }
+    ]
+  }
+}
